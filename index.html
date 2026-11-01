@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sif Eddine Benabida</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfolio de Sif Eddine Benabida, Business Analyst supply chain et data : rapports Power BI, optimisation du chargement des camions (Bin Packing 3D), suivi logistique chez Condor Electronics.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sif Eddine Benabida · Business Analyst supply chain & data">
+<meta property="og:description" content="Rapports Power BI, optimisation du chargement des camions, suivi logistique chez Condor Electronics.">
+<meta property="og:url" content="https://sifou-213.github.io/">
+<meta property="og:image" content="https://sifou-213.github.io/assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4 58 19v26L32 60 6 45V19z' fill='%23D99D52'/%3E%3Cpath d='M32 34 58 19M32 34 6 19M32 34v26' stroke='%2315202B' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: cargo manifest. A narrow mono label column sits beside the content like a shipping document; the hero pairs the pitch with an isometric truck-load plan. */
+:root {
+  --bg: #F1F3F5;
+  --surface: #FFFFFF;
+  --ink: #15202B;
+  --muted: #55626E;
+  --line: #D5DBE1;
+  --accent: #A85F0C;
+  --accent-soft: #F7E6CC;
+  --link: #1B5B91;
+  --ok: #2F7D4F;
+  --steel: #8A99A8;
+  --floor: #E3E8ED;
+  --box-top: #EDBF7E; --box-left: #C4843A; --box-right: #D99D52; --tape: #F6D9A9;
+  --crate-top: #93B5D6; --crate-left: #3F6E9C; --crate-right: #5F8DBA;
+  --edge: rgb(21 32 43 / .28);
+  --shadow: 0 1px 2px rgb(21 32 43 / .06), 0 12px 32px -18px rgb(21 32 43 / .28);
+  --f-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D131A; --surface: #141C25; --ink: #E3E9EF; --muted: #97A5B2; --line: #26323F;
+    --accent: #EFA43F; --accent-soft: #3A2A14; --link: #8CBDEA; --ok: #5FBF85;
+    --steel: #5E6E7E; --floor: #18222D;
+    --box-top: #C9965A; --box-left: #8A5A26; --box-right: #A8743A; --tape: #DDB47C;
+    --crate-top: #6E93B8; --crate-left: #2B4C6F; --crate-right: #3F6790;
+    --edge: rgb(0 0 0 / .45);
+    --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 12px 32px -18px rgb(0 0 0 / .6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D131A; --surface: #141C25; --ink: #E3E9EF; --muted: #97A5B2; --line: #26323F;
+  --accent: #EFA43F; --accent-soft: #3A2A14; --link: #8CBDEA; --ok: #5FBF85;
+  --steel: #5E6E7E; --floor: #18222D;
+  --box-top: #C9965A; --box-left: #8A5A26; --box-right: #A8743A; --tape: #DDB47C;
+  --crate-top: #6E93B8; --crate-left: #2B4C6F; --crate-right: #3F6790;
+  --edge: rgb(0 0 0 / .45);
+  --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 12px 32px -18px rgb(0 0 0 / .6);
+  color-scheme: dark;
+}
+
+html:not([data-lang="en"]) [lang="en"], html[data-lang="en"] [lang="fr"] { display: none !important; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 1rem/1.6 var(--f-body);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--link); text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.1; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; }
+
+.wrap {
+  max-width: 1184px; margin-inline: auto;
+  padding-left: max(clamp(16px, 4vw, 32px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(16px, 4vw, 32px), env(safe-area-inset-right, 0px));
+}
+.mono { font-family: var(--f-mono); }
+.label {
+  font: 500 .72rem/1.3 var(--f-mono); letter-spacing: .09em; text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- header ---------- */
+.site-head {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.head-row { display: flex; align-items: center; gap: 24px; min-height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 600; }
+.brand-mark {
+  font: 700 .78rem/1 var(--f-display); font-stretch: 120%; letter-spacing: .04em;
+  border: 1.5px solid var(--ink); padding: 6px 7px 5px; border-radius: 3px;
+}
+.brand-name { font-size: .95rem; }
+.nav { display: flex; gap: 22px; margin-left: auto; }
+.nav a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; }
+.nav a:hover { color: var(--ink); }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); }
+.lang button {
+  font: 500 .74rem/1 var(--f-mono); letter-spacing: .06em; color: var(--muted);
+  background: none; border: 0; padding: 6px 10px; border-radius: 999px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+@media (max-width: 720px) { .nav { display: none; } .lang { margin-left: auto; } .brand-name { display: none; } }
+
+/* ---------- hero ---------- */
+.hero { padding-block: clamp(36px, 6vw, 72px) clamp(28px, 4vw, 44px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.hero-text { display: grid; gap: 22px; min-width: 0; }
+.badge-row { display: flex; align-items: center; gap: 14px; }
+.avatar { width: 64px; height: 64px; border-radius: 10px; object-fit: cover; border: 1px solid var(--line); }
+.status { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 500; }
+.status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent); }
+.where { color: var(--muted); font-size: .86rem; }
+.eyebrow { font: 500 .8rem/1.3 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.hero h1 {
+  font-size: clamp(2.5rem, 5.8vw, 4.5rem); font-weight: 800; font-stretch: 116%;
+  text-transform: uppercase; letter-spacing: -.012em; line-height: .98;
+}
+.lead { font-size: clamp(1.05rem, 1.6vw, 1.2rem); line-height: 1.55; max-width: 34em; color: var(--ink); }
+.lead strong { font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px;
+  border-radius: 8px; border: 1px solid var(--ink); font-weight: 600; font-size: .95rem;
+  text-decoration: none; color: var(--ink); background: transparent; cursor: pointer;
+}
+.btn:hover { background: color-mix(in srgb, var(--ink) 7%, transparent); }
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn.primary:hover { background: color-mix(in srgb, var(--ink) 86%, var(--bg)); }
+.btn svg { width: 16px; height: 16px; flex: none; }
+
+.loadplan {
+  margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow); overflow: hidden; min-width: 0;
+}
+.lp-head, .lp-foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 16px;
+  padding: 12px 16px; font: 500 .72rem/1.35 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+}
+.lp-head { border-bottom: 1px dashed var(--line); }
+.lp-head b { color: var(--ink); font-weight: 500; }
+.lp-foot { border-top: 1px dashed var(--line); }
+.lp-stats { display: flex; gap: 18px; font-variant-numeric: tabular-nums; }
+.lp-stats b { color: var(--ink); font-weight: 500; }
+.lp-canvas { display: block; width: 100%; height: auto; aspect-ratio: 1.24; }
+.replay {
+  font: 500 .72rem/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--link); background: none; border: 0; padding: 6px 0; cursor: pointer;
+}
+.lp-note { padding: 0 16px 14px; font-size: .82rem; color: var(--muted); }
+
+.manifest {
+  margin: clamp(32px, 5vw, 52px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1.5px solid var(--ink); border-bottom: 1px solid var(--line);
+}
+.manifest > div { padding: 14px 18px 16px 0; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.manifest > div + div { padding-left: 18px; border-left: 1px solid var(--line); }
+.manifest dd { margin: 0; font-weight: 500; line-height: 1.4; }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .manifest { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .manifest > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .manifest > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 480px) {
+  .manifest { grid-template-columns: minmax(0, 1fr); }
+  .manifest > div, .manifest > div + div { padding-left: 0; border-left: 0; }
+  .manifest > div + div { border-top: 1px solid var(--line); }
+}
+
+/* ---------- sections ---------- */
+.section { padding-block: clamp(48px, 7vw, 88px); }
+.section.alt { background: var(--surface); border-block: 1px solid var(--line); }
+.sec-head { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 8px 32px; margin-bottom: clamp(28px, 4vw, 44px); }
+.sec-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 750; font-stretch: 108%; letter-spacing: -.01em; }
+.sec-head .intro { grid-column: 2; color: var(--muted); max-width: 40em; margin-top: 6px; }
+.sec-head .label { padding-top: .7em; }
+@media (max-width: 760px) { .sec-head { grid-template-columns: minmax(0, 1fr); } .sec-head .intro { grid-column: 1; } .sec-head .label { padding-top: 0; } }
+
+/* ---------- projects ---------- */
+.project {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(22px, 4vw, 48px);
+  padding-block: clamp(28px, 4vw, 44px); border-top: 1px solid var(--line); align-items: start;
+}
+.project:first-of-type { border-top: 1.5px solid var(--ink); }
+.project-body { display: grid; gap: 18px; min-width: 0; }
+.project-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.project h3 { font-size: clamp(1.3rem, 2.2vw, 1.65rem); font-weight: 700; font-stretch: 104%; }
+.facts { margin: 0; display: grid; gap: 14px; }
+.facts > div { display: grid; gap: 4px; }
+.facts dd { margin: 0; }
+.figures { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.figures li {
+  display: grid; gap: 1px; padding: 8px 12px; border-radius: 8px;
+  background: var(--accent-soft); min-width: 0;
+}
+.figures b { font: 600 1.05rem/1.2 var(--f-mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+.figures span { font-size: .78rem; color: var(--muted); line-height: 1.3; }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 14px; font: 400 .8rem/1.4 var(--f-mono); color: var(--muted); }
+.tags li::before { content: "▪ "; color: var(--accent); }
+.links { display: flex; flex-wrap: wrap; gap: 8px 20px; font-weight: 600; font-size: .95rem; }
+.links a { display: inline-flex; align-items: center; gap: 6px; }
+.links svg { width: 15px; height: 15px; }
+
+.gallery { display: grid; gap: 10px; min-width: 0; }
+.g-main {
+  display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+  background: var(--surface); cursor: zoom-in; aspect-ratio: 16 / 10; box-shadow: var(--shadow);
+}
+.g-main img { width: 100%; height: 100%; object-fit: contain; }
+.g-thumbs { display: flex; flex-wrap: wrap; gap: 8px; }
+.g-thumb {
+  display: grid; gap: 5px; padding: 4px 4px 6px; width: 132px; max-width: calc(33.333% - 6px);
+  background: none; border: 1px solid transparent; border-radius: 8px; cursor: pointer; text-align: left; color: var(--muted);
+}
+.g-thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 5px; border: 1px solid var(--line); }
+.g-thumb span { font: 400 .7rem/1.25 var(--f-mono); letter-spacing: .03em; }
+.g-thumb[aria-pressed="true"] { border-color: var(--line); background: var(--surface); color: var(--ink); }
+.g-thumb[aria-pressed="true"] img { border-color: var(--accent); }
+
+.pfe-visual { margin: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; box-shadow: var(--shadow); }
+.pfe-visual .lp-canvas { aspect-ratio: 1.5; }
+.pfe-visual figcaption { padding: 10px 14px; border-top: 1px dashed var(--line); font: 500 .72rem/1.4 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+
+.academic { margin-top: clamp(28px, 4vw, 40px); padding-top: 22px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 8px 32px; }
+.academic ul { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 28px; }
+.academic li { display: grid; gap: 2px; }
+.academic li b { font-weight: 600; }
+.academic li span { color: var(--muted); font-size: .92rem; }
+@media (max-width: 860px) {
+  .project { grid-template-columns: minmax(0, 1fr); }
+  .academic, .academic ul { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- experience ---------- */
+.timeline { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); }
+.col-title { padding-bottom: 10px; border-bottom: 1.5px solid var(--ink); margin-bottom: 4px; }
+.entry { padding-block: 20px; border-bottom: 1px solid var(--line); display: grid; gap: 6px; }
+.entry h3 { font-size: 1.15rem; font-weight: 700; font-stretch: 102%; }
+.entry .org { color: var(--muted); }
+.entry .when { font: 500 .78rem/1.3 var(--f-mono); letter-spacing: .05em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.entry ul { padding-left: 1.1em; display: grid; gap: 6px; margin-top: 6px; }
+.entry li::marker { color: var(--accent); }
+.honor { display: inline-block; margin-top: 2px; font: 500 .72rem/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; padding: 5px 8px; border-radius: 4px; background: var(--accent-soft); color: var(--ink); justify-self: start; }
+@media (max-width: 820px) { .timeline { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- skills ---------- */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1.5px solid var(--ink); }
+.skill { padding: 18px 22px 22px 0; display: grid; gap: 10px; align-content: start; border-bottom: 1px solid var(--line); min-width: 0; }
+.skill:not(:nth-child(3n+1)) { padding-left: 22px; border-left: 1px solid var(--line); }
+.skill ul { list-style: none; display: grid; gap: 6px; }
+.skill li { line-height: 1.45; }
+.skill li small { color: var(--muted); font-size: .86rem; }
+.cert {
+  margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px;
+  padding: 18px 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+}
+.cert-text { display: grid; gap: 4px; }
+.cert-text b { font-family: var(--f-display); font-size: 1.1rem; font-weight: 700; }
+@media (max-width: 860px) {
+  .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
+  .skill:nth-child(even) { padding-left: 22px; border-left: 1px solid var(--line); }
+}
+@media (max-width: 520px) {
+  .skills { grid-template-columns: minmax(0, 1fr); }
+  .skill:nth-child(even) { padding-left: 0; border-left: 0; }
+}
+
+/* ---------- contact ---------- */
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.contact-pitch { display: grid; gap: 18px; }
+.contact-pitch h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 750; font-stretch: 108%; }
+.contact-pitch p { color: var(--muted); max-width: 32em; }
+.channels { margin: 0; border-top: 1.5px solid var(--ink); }
+.channels > div { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.channels dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; user-select: all; }
+.channels dd.plain { user-select: auto; }
+.copy {
+  font: 500 .72rem/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 6px; padding: 8px 10px; cursor: pointer;
+}
+.copy:hover { border-color: var(--ink); }
+@media (max-width: 820px) { .contact-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 460px) { .channels > div { grid-template-columns: minmax(0, 1fr) auto; } .channels dt { grid-column: 1 / -1; } }
+
+.site-foot { padding-block: 28px 36px; color: var(--muted); font-size: .85rem; }
+.site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+/* ---------- lightbox ---------- */
+dialog.lightbox {
+  width: min(1400px, 96vw); max-height: 92vh; padding: 0; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--surface); color: var(--ink);
+}
+dialog.lightbox::backdrop { background: rgb(8 12 16 / .78); }
+.lb-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.lb-bar .copy { background: var(--surface); }
+.lightbox img { width: 100%; max-height: calc(92vh - 56px); object-fit: contain; background: var(--surface); }
+</style>
+</head>
+<body>
+<script>
+(function () {
+  var l = 'fr';
+  try { l = localStorage.getItem('seb-lang') || l; } catch (e) {}
+  if (/^#?en$/i.test(location.hash) || /[?&]lang=en\b/.test(location.search)) l = 'en';
+  if (/^#?fr$/i.test(location.hash) || /[?&]lang=fr\b/.test(location.search)) l = 'fr';
+  document.documentElement.dataset.lang = l;
+  document.documentElement.lang = l;
+})();
+</script>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#top" aria-label="Sif Eddine Benabida">
+      <span class="brand-mark">SEB</span>
+      <span class="brand-name">Sif Eddine Benabida</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projets"><span lang="fr">Projets</span><span lang="en">Projects</span></a>
+      <a href="#parcours"><span lang="fr">Parcours</span><span lang="en">Experience</span></a>
+      <a href="#competences"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" id="lang-fr" data-set-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" id="lang-en" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <div class="badge-row">
+          <img class="avatar" src="assets/img/photo.png" width="64" height="64" alt="Sif Eddine Benabida">
+          <div>
+            <p class="status"><span class="dot" aria-hidden="true"></span>
+              <span lang="fr">Ouvert aux postes de Business Analyst</span><span lang="en">Open to Business Analyst roles</span></p>
+            <p class="where"><span lang="fr">Bordj Bou Arréridj, Algérie</span><span lang="en">Bordj Bou Arréridj, Algeria</span></p>
+          </div>
+        </div>
+        <p class="eyebrow"><span lang="fr">Business Analyst · Supply chain &amp; données</span><span lang="en">Business Analyst · Supply chain &amp; data</span></p>
+        <h1>Sif Eddine<br>Benabida</h1>
+        <p class="lead" lang="fr">Je transforme les données de la chaîne logistique en décisions concrètes. Chargé du suivi logistique chez <strong>Condor Electronics</strong>, diplômé <strong>major de promotion</strong> du master en recherche opérationnelle.</p>
+        <p class="lead" lang="en">I turn supply chain data into concrete decisions. Logistics tracking officer at <strong>Condor Electronics</strong> and <strong>top of my class</strong> in an Operations Research master’s degree.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projets"><span lang="fr">Voir les projets</span><span lang="en">See my projects</span></a>
+          <a class="btn" href="cv/CV_Sif_Eddine_Benabida_FR.pdf" target="_blank" rel="noopener" lang="fr">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10"/></svg>CV (PDF)</a>
+          <a class="btn" href="cv/CV_Sif_Eddine_Benabida_EN.pdf" target="_blank" rel="noopener" lang="en">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10"/></svg>Resume (PDF)</a>
+          <a class="btn" href="https://github.com/Sifou-213" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <figure class="loadplan" aria-labelledby="lp-title">
+        <div class="lp-head">
+          <span id="lp-title"><span lang="fr">Plan de chargement</span><span lang="en">Load plan</span></span>
+          <b><span lang="fr">Camion 10T · 8,0 × 2,5 × 2,6 m</span><span lang="en">10T truck · 8.0 × 2.5 × 2.6 m</span></b>
+        </div>
+        <canvas class="lp-canvas" id="hero-canvas" role="img" aria-label="Illustration: a truck being loaded layer by layer with boxes"></canvas>
+        <div class="lp-foot">
+          <span class="lp-stats">
+            <span><span lang="fr">Colis</span><span lang="en">Boxes</span> <b id="lp-count">0</b></span>
+            <span><span lang="fr">Volume chargé</span><span lang="en">Volume used</span> <b id="lp-vol">0 %</b></span>
+          </span>
+          <button class="replay" type="button" id="lp-replay"><span lang="fr">↻ Rejouer</span><span lang="en">↻ Replay</span></button>
+        </div>
+        <p class="lp-note" lang="fr">Démo inspirée de mon projet de fin d’études : le chargement se construit couche par couche, du fond du camion vers la porte.</p>
+        <p class="lp-note" lang="en">Demo inspired by my final-year project: the load is built layer by layer, from the back of the truck to the door.</p>
+      </figure>
+    </div>
+
+    <div class="wrap">
+      <dl class="manifest">
+        <div><dt class="label"><span lang="fr">Poste actuel</span><span lang="en">Current role</span></dt>
+          <dd><span lang="fr">Chargé suivi logistique, Condor Electronics</span><span lang="en">Logistics Tracking Officer, Condor Electronics</span></dd></div>
+        <div><dt class="label"><span lang="fr">Formation</span><span lang="en">Education</span></dt>
+          <dd><span lang="fr">Master en recherche opérationnelle, major de promotion</span><span lang="en">MSc Operations Research, ranked 1st in class</span></dd></div>
+        <div><dt class="label"><span lang="fr">Outils</span><span lang="en">Tools</span></dt>
+          <dd>Power BI · SAP SD · SQL · Python</dd></div>
+        <div><dt class="label">Certification</dt>
+          <dd>Power BI Data Analyst, DataCamp</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section alt" id="projets">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label"><span lang="fr">Projets</span><span lang="en">Projects</span></p>
+        <h2><span lang="fr">Partir d’une question métier, finir sur une décision</span><span lang="en">Start from a business question, end with a decision</span></h2>
+        <p class="intro" lang="fr">Chaque projet suit la même méthode : poser la question, construire un modèle de données propre, puis montrer ce que les chiffres disent vraiment.</p>
+        <p class="intro" lang="en">Every project follows the same method: frame the question, build a clean data model, then show what the numbers actually say.</p>
+      </div>
+
+      <!-- PFE -->
+      <article class="project">
+        <figure class="pfe-visual">
+          <canvas class="lp-canvas" id="pfe-canvas" role="img" aria-label="Illustration: a fully loaded van, boxes stacked in layers"></canvas>
+          <figcaption><span lang="fr">Fourgon · 4,5 × 2,0 × 2,0 m · l’un des 11 véhicules de la flotte modélisée</span><span lang="en">Van · 4.5 × 2.0 × 2.0 m · one of the 11 fleet vehicles modelled</span></figcaption>
+        </figure>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="label"><span lang="fr">Projet de fin d’études</span><span lang="en">Final-year project</span></span>
+            <span class="label">Condor Logistics · 2025</span>
+          </div>
+          <h3><span lang="fr">Optimisation du chargement des camions (Bin Packing 3D)</span><span lang="en">Truck loading optimisation (3D Bin Packing)</span></h3>
+          <dl class="facts">
+            <div><dt class="label"><span lang="fr">Question métier</span><span lang="en">Business question</span></dt>
+              <dd lang="fr">Comment charger chaque camion pour baisser le coût de transport par pièce et éviter les dommages causés par les chargements non conformes&nbsp;?</dd>
+              <dd lang="en">How should each truck be loaded to lower the transport cost per item and avoid damage caused by non-compliant loads?</dd></div>
+            <div><dt class="label"><span lang="fr">Démarche</span><span lang="en">Approach</span></dt>
+              <dd lang="fr">Modélisation en problème de Bin Packing 3D, résolu par un algorithme génétique hybride qui construit le chargement couche par couche. Contraintes réelles intégrées&nbsp;: catalogue des 11 véhicules de la flotte, orientations autorisées pour chaque colis, limite de temps de calcul.</dd>
+              <dd lang="en">Modelled as a 3D Bin Packing problem and solved with a hybrid genetic algorithm that builds the load layer by layer. Real constraints included: catalogue of the 11 fleet vehicles, allowed orientations for each box, computation time limit.</dd></div>
+            <div><dt class="label"><span lang="fr">Livrable</span><span lang="en">Deliverable</span></dt>
+              <dd lang="fr">Application web Python (Flask) avec API REST, qui calcule le plan de chargement et l’affiche en 3D couche par couche.</dd>
+              <dd lang="en">Python web app (Flask) with a REST API that computes the load plan and shows it in 3D, layer by layer.</dd></div>
+          </dl>
+          <ul class="tags"><li>Python</li><li>NumPy</li><li>Flask</li><li>Plotly</li><li><span lang="fr">Métaheuristiques</span><span lang="en">Metaheuristics</span></li></ul>
+          <p class="links"><a href="https://github.com/Sifou-213/3D-Bin-Packing" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg><span lang="fr">Code sur GitHub</span><span lang="en">Code on GitHub</span></a></p>
+        </div>
+      </article>
+
+      <!-- Logistics -->
+      <article class="project">
+        <div class="gallery" data-gallery>
+          <button class="g-main" type="button" data-label-fr="Agrandir l’image" data-label-en="Enlarge image" aria-label="Agrandir l’image">
+            <img src="assets/img/logistics-overview.webp" width="1600" height="949" loading="lazy" data-alt-fr="Rapport Power BI, page Vue d’ensemble : commandes, chiffre d’affaires, coût et profit, par mois, par entrepôt et par catégorie" data-alt-en="Power BI report, Overview page: orders, revenue, cost and profit by month, warehouse and category" alt="Rapport Power BI, page Vue d’ensemble">
+          </button>
+          <div class="g-thumbs" role="group" aria-label="Pages">
+            <button class="g-thumb" type="button" aria-pressed="true" data-src="assets/img/logistics-overview.webp" data-w="1600" data-h="949" data-alt-fr="Rapport Power BI, page Vue d’ensemble : commandes, chiffre d’affaires, coût et profit, par mois, par entrepôt et par catégorie" data-alt-en="Power BI report, Overview page: orders, revenue, cost and profit by month, warehouse and category">
+              <img src="assets/img/logistics-overview.webp" alt="" loading="lazy"><span><span lang="fr">Vue d’ensemble</span><span lang="en">Overview</span></span></button>
+            <button class="g-thumb" type="button" aria-pressed="false" data-src="assets/img/logistics-warehouse.webp" data-w="1600" data-h="949" data-alt-fr="Rapport Power BI, page Performance des entrepôts" data-alt-en="Power BI report, Warehouse performance page">
+              <img src="assets/img/logistics-warehouse.webp" alt="" loading="lazy"><span><span lang="fr">Entrepôts</span><span lang="en">Warehouses</span></span></button>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span class="label">Power BI</span><span class="label"><span lang="fr">Projet personnel</span><span lang="en">Personal project</span></span></div>
+          <h3><span lang="fr">Performance logistique et supply chain</span><span lang="en">Logistics &amp; supply chain performance</span></h3>
+          <dl class="facts">
+            <div><dt class="label"><span lang="fr">Question métier</span><span lang="en">Business question</span></dt>
+              <dd lang="fr">Où se créent le chiffre d’affaires et les délais, de l’approvisionnement à la livraison&nbsp;?</dd>
+              <dd lang="en">Where are revenue and lead times made, from procurement to delivery?</dd></div>
+            <div><dt class="label"><span lang="fr">Démarche</span><span lang="en">Approach</span></dt>
+              <dd lang="fr">Trois ans de commandes (2018–2020) dans un modèle en étoile évolutif. Rapport de 4 pages&nbsp;: vue d’ensemble, rapidité de traitement, performance des entrepôts, équipes commerciales et produits. Version mobile incluse.</dd>
+              <dd lang="en">Three years of orders (2018–2020) in a scalable star schema. Four-page report: overview, fulfilment speed, warehouse performance, sales teams and products. Mobile layout included.</dd></div>
+          </dl>
+          <ul class="figures">
+            <li><b>7&#8239;991</b><span lang="fr">commandes</span><span lang="en">orders</span></li>
+            <li><b>82,7&#8239;M$</b><span lang="fr">de chiffre d’affaires</span><span lang="en">revenue</span></li>
+            <li><b>3</b><span lang="fr">entrepôts comparés</span><span lang="en">warehouses compared</span></li>
+          </ul>
+          <ul class="tags"><li>Power Query</li><li>DAX</li><li><span lang="fr">Modèle en étoile</span><span lang="en">Star schema</span></li><li>Mobile layout</li></ul>
+          <p class="links"><a href="https://github.com/Sifou-213/Logistics-Supply-Chain-Performance-Report" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg><span lang="fr">Fichiers .pbix, données et captures</span><span lang="en">.pbix files, data and screenshots</span></a></p>
+        </div>
+      </article>
+
+      <!-- DataCo -->
+      <article class="project">
+        <div class="gallery" data-gallery>
+          <button class="g-main" type="button" data-label-fr="Agrandir l’image" data-label-en="Enlarge image" aria-label="Agrandir l’image">
+            <img src="assets/img/inventory-executive.webp" width="1330" height="736" loading="lazy" data-alt-fr="Rapport Power BI DataCo, page Synthèse : 62 550 commandes, délai moyen d’expédition 3,49 jours, 55 % de livraisons en retard" data-alt-en="DataCo Power BI report, Executive summary: 62,550 orders, 3.49 average shipping days, 55% late deliveries" alt="Rapport Power BI DataCo, page Synthèse">
+          </button>
+          <div class="g-thumbs" role="group" aria-label="Pages">
+            <button class="g-thumb" type="button" aria-pressed="true" data-src="assets/img/inventory-executive.webp" data-w="1330" data-h="736" data-alt-fr="Rapport Power BI DataCo, page Synthèse : 62 550 commandes, délai moyen d’expédition 3,49 jours, 55 % de livraisons en retard" data-alt-en="DataCo Power BI report, Executive summary: 62,550 orders, 3.49 average shipping days, 55% late deliveries">
+              <img src="assets/img/inventory-executive.webp" alt="" loading="lazy"><span><span lang="fr">Synthèse</span><span lang="en">Summary</span></span></button>
+            <button class="g-thumb" type="button" aria-pressed="false" data-src="assets/img/inventory-supplychain.webp" data-w="751" data-h="776" data-alt-fr="Rapport Power BI DataCo, page Performance logistique" data-alt-en="DataCo Power BI report, Logistics performance page">
+              <img src="assets/img/inventory-supplychain.webp" alt="" loading="lazy"><span><span lang="fr">Logistique</span><span lang="en">Logistics</span></span></button>
+            <button class="g-thumb" type="button" aria-pressed="false" data-src="assets/img/inventory-datamodel.webp" data-w="983" data-h="736" data-alt-fr="Modèle de données en flocon du rapport DataCo" data-alt-en="Snowflake data model of the DataCo report">
+              <img src="assets/img/inventory-datamodel.webp" alt="" loading="lazy"><span><span lang="fr">Modèle de données</span><span lang="en">Data model</span></span></button>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span class="label">Power BI</span><span class="label"><span lang="fr">Projet personnel</span><span lang="en">Personal project</span></span></div>
+          <h3><span lang="fr">Stocks, rentabilité et livraisons (DataCo)</span><span lang="en">Inventory, profitability &amp; delivery (DataCo)</span></h3>
+          <dl class="facts">
+            <div><dt class="label"><span lang="fr">Question métier</span><span lang="en">Business question</span></dt>
+              <dd lang="fr">Les livraisons tiennent-elles leurs délais, et quelles commandes détruisent de la marge&nbsp;?</dd>
+              <dd lang="en">Are deliveries on time, and which orders destroy margin?</dd></div>
+            <div><dt class="label"><span lang="fr">Démarche</span><span lang="en">Approach</span></dt>
+              <dd lang="fr">Nettoyage sous Power Query, modèle en flocon, mesures DAX&nbsp;: délai moyen d’expédition, profit, marge, remise moyenne, commandes déficitaires. Trois pages&nbsp;: synthèse, performance logistique, rentabilité et risque.</dd>
+              <dd lang="en">Cleaned in Power Query, snowflake schema, DAX measures: average shipping days, profit, margin, average discount, loss-making orders. Three pages: summary, logistics performance, profitability and risk.</dd></div>
+            <div><dt class="label"><span lang="fr">Ce que montrent les données</span><span lang="en">What the data shows</span></dt>
+              <dd lang="fr">Plus de la moitié des commandes arrivent en retard (55&#8239;%), contre seulement 18&#8239;% livrées à l’heure&nbsp;: le délai promis est le premier levier à traiter.</dd>
+              <dd lang="en">More than half of all orders arrive late (55%), while only 18% are delivered on time: the promised lead time is the first lever to fix.</dd></div>
+          </dl>
+          <ul class="figures">
+            <li><b>62&#8239;550</b><span lang="fr">commandes</span><span lang="en">orders</span></li>
+            <li><b>55&#8239;%</b><span lang="fr">livrées en retard</span><span lang="en">delivered late</span></li>
+            <li><b>3,49&#8239;j</b><span lang="fr">délai moyen d’expédition</span><span lang="en">avg. shipping days</span></li>
+          </ul>
+          <ul class="tags"><li>Power Query</li><li>DAX</li><li><span lang="fr">Modèle en flocon</span><span lang="en">Snowflake schema</span></li></ul>
+          <p class="links"><a href="https://github.com/Sifou-213/Inventory-Supply-Chain-Performance-Report" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg><span lang="fr">Fichier .pbix et captures</span><span lang="en">.pbix file and screenshots</span></a></p>
+        </div>
+      </article>
+
+      <!-- Sales -->
+      <article class="project">
+        <div class="gallery" data-gallery>
+          <button class="g-main" type="button" data-label-fr="Agrandir l’image" data-label-en="Enlarge image" aria-label="Agrandir l’image">
+            <img src="assets/img/sales-summary.webp" width="1125" height="636" loading="lazy" data-alt-fr="Rapport Power BI SuperStore, synthèse : ventes 2,30 M$, profit 286 k$, marge 12,47 %, ventes par segment et par État" data-alt-en="SuperStore Power BI report, summary: $2.30M sales, $286K profit, 12.47% margin, sales by segment and state" alt="Rapport Power BI SuperStore, synthèse">
+          </button>
+          <div class="g-thumbs" role="group" aria-label="Pages">
+            <button class="g-thumb" type="button" aria-pressed="true" data-src="assets/img/sales-summary.webp" data-w="1125" data-h="636" data-alt-fr="Rapport Power BI SuperStore, synthèse : ventes 2,30 M$, profit 286 k$, marge 12,47 %, ventes par segment et par État" data-alt-en="SuperStore Power BI report, summary: $2.30M sales, $286K profit, 12.47% margin, sales by segment and state">
+              <img src="assets/img/sales-summary.webp" alt="" loading="lazy"><span><span lang="fr">Synthèse</span><span lang="en">Summary</span></span></button>
+            <button class="g-thumb" type="button" aria-pressed="false" data-src="assets/img/sales-regional.webp" data-w="1355" data-h="745" data-alt-fr="Rapport Power BI SuperStore, analyse régionale" data-alt-en="SuperStore Power BI report, regional analysis">
+              <img src="assets/img/sales-regional.webp" alt="" loading="lazy"><span><span lang="fr">Régions</span><span lang="en">Regions</span></span></button>
+            <button class="g-thumb" type="button" aria-pressed="false" data-src="assets/img/sales-mobile.webp" data-w="467" data-h="816" data-alt-fr="Version mobile du rapport SuperStore" data-alt-en="Mobile layout of the SuperStore report">
+              <img src="assets/img/sales-mobile.webp" alt="" loading="lazy"><span><span lang="fr">Version mobile</span><span lang="en">Mobile layout</span></span></button>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span class="label">Power BI</span><span class="label"><span lang="fr">Projet personnel</span><span lang="en">Personal project</span></span></div>
+          <h3><span lang="fr">Performance commerciale (SuperStore)</span><span lang="en">Sales performance (SuperStore)</span></h3>
+          <dl class="facts">
+            <div><dt class="label"><span lang="fr">Question métier</span><span lang="en">Business question</span></dt>
+              <dd lang="fr">Quels segments, régions et produits portent les ventes et la marge&nbsp;?</dd>
+              <dd lang="en">Which segments, regions and products drive sales and margin?</dd></div>
+            <div><dt class="label"><span lang="fr">Démarche</span><span lang="en">Approach</span></dt>
+              <dd lang="fr">Nettoyage et transformation sous Power Query, modèle en étoile, mesures DAX (ventes, profit, marge, croissance YoY, YTD), analyse des facteurs d’influence. Thème personnalisé, navigation de type application et version mobile.</dd>
+              <dd lang="en">Cleaned and transformed in Power Query, star schema, DAX measures (sales, profit, margin, YoY growth, YTD), key influencers analysis. Custom theme, app-style navigation and a mobile layout.</dd></div>
+          </dl>
+          <ul class="figures">
+            <li><b>2,30&#8239;M$</b><span lang="fr">de ventes</span><span lang="en">in sales</span></li>
+            <li><b>12,5&#8239;%</b><span lang="fr">de marge</span><span lang="en">margin</span></li>
+            <li><b>≈&#8239;50&#8239;%</b><span lang="fr">des ventes : segment Consumer</span><span lang="en">of sales: Consumer segment</span></li>
+          </ul>
+          <ul class="tags"><li>Power Query</li><li>DAX</li><li>YoY / YTD</li><li>Key influencers</li></ul>
+          <p class="links"><a href="https://github.com/Sifou-213/Sales-Performance-Report" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg><span lang="fr">Fichier .pbix, données et captures</span><span lang="en">.pbix file, data and screenshots</span></a></p>
+        </div>
+      </article>
+
+      <div class="academic">
+        <p class="label"><span lang="fr">Travaux académiques</span><span lang="en">Academic work</span></p>
+        <ul>
+          <li><b><span lang="fr">Voyageur de commerce</span><span lang="en">Travelling salesman</span></b><span><span lang="fr">Branch and Bound sous Matlab · 2024</span><span lang="en">Branch and Bound in Matlab · 2024</span></span></li>
+          <li><b><span lang="fr">Optimisation non linéaire</span><span lang="en">Nonlinear optimisation</span></b><span><span lang="fr">Méthodes de région de confiance · 2024</span><span lang="en">Trust-region methods · 2024</span></span></li>
+          <li><b><span lang="fr">Optimisation multi-objectif</span><span lang="en">Multi-objective optimisation</span></b><span><span lang="fr">Normes L¹, L², L∞ · 2025</span><span lang="en">L¹, L², L∞ norms · 2025</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section" id="parcours">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label"><span lang="fr">Parcours</span><span lang="en">Experience</span></p>
+        <h2><span lang="fr">Du terrain logistique à l’analyse</span><span lang="en">From the logistics floor to analysis</span></h2>
+      </div>
+      <div class="timeline">
+        <div>
+          <p class="label col-title"><span lang="fr">Expérience</span><span lang="en">Work</span></p>
+          <article class="entry">
+            <p class="when"><span lang="fr">2025 — aujourd’hui</span><span lang="en">2025 — present</span></p>
+            <h3><span lang="fr">Chargé suivi logistique</span><span lang="en">Logistics Tracking Officer</span></h3>
+            <p class="org">Condor Electronics · Bordj Bou Arréridj</p>
+            <ul lang="fr">
+              <li>Suivi de bout en bout de la distribution des produits finis, de la planification des rotations jusqu’à la livraison.</li>
+              <li>Analyse des écarts entre prévu et réalisé et de leurs causes, avec des propositions d’actions pour améliorer la performance logistique.</li>
+              <li>Suivi des expéditions dans SAP SD et reporting de la performance dans des tableaux de bord Power BI.</li>
+              <li>Coordination avec les transporteurs et les entrepôts.</li>
+            </ul>
+            <ul lang="en">
+              <li>End-to-end tracking of finished-goods distribution, from trip planning to delivery.</li>
+              <li>Analyse gaps between planned and actual operations and their root causes, and propose actions to improve logistics performance.</li>
+              <li>Track shipments in SAP SD and report performance through Power BI dashboards.</li>
+              <li>Coordinate with carriers and warehouses.</li>
+            </ul>
+          </article>
+          <article class="entry">
+            <p class="when">2024 — 2025</p>
+            <h3><span lang="fr">Stage de fin d’études</span><span lang="en">Final-year internship</span></h3>
+            <p class="org">Condor Logistics</p>
+            <ul lang="fr">
+              <li>Modélisation et résolution du chargement des camions (Bin Packing 3D) pour réduire le coût de transport par pièce et les dommages.</li>
+              <li>Développement d’une application Python intégrant les contraintes réelles de la flotte.</li>
+            </ul>
+            <ul lang="en">
+              <li>Modelled and solved truck loading (3D Bin Packing) to cut transport cost per item and damage.</li>
+              <li>Built a Python application that includes the fleet’s real constraints.</li>
+            </ul>
+          </article>
+        </div>
+        <div>
+          <p class="label col-title"><span lang="fr">Formation</span><span lang="en">Education</span></p>
+          <article class="entry">
+            <p class="when">2023 — 2025</p>
+            <h3><span lang="fr">Master en recherche opérationnelle</span><span lang="en">MSc in Operations Research</span></h3>
+            <p class="org"><span lang="fr">Université El Bachir El Ibrahimi, Bordj Bou Arréridj</span><span lang="en">El Bachir El Ibrahimi University, Bordj Bou Arréridj</span></p>
+            <span class="honor"><span lang="fr">Major de promotion</span><span lang="en">Ranked 1st in class</span></span>
+            <ul lang="fr"><li>Visites industrielles&nbsp;: usines Condor Electronics, unités de production Cevital.</li></ul>
+            <ul lang="en"><li>Industrial visits: Condor Electronics plants, Cevital production units.</li></ul>
+          </article>
+          <article class="entry">
+            <p class="when">2020 — 2023</p>
+            <h3><span lang="fr">Licence en mathématiques</span><span lang="en">BSc in Mathematics</span></h3>
+            <p class="org"><span lang="fr">Université El Bachir El Ibrahimi, Bordj Bou Arréridj</span><span lang="en">El Bachir El Ibrahimi University, Bordj Bou Arréridj</span></p>
+            <span class="honor"><span lang="fr">2ᵉ de la promotion</span><span lang="en">Ranked 2nd in class</span></span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section alt" id="competences">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label"><span lang="fr">Compétences</span><span lang="en">Skills</span></p>
+        <h2><span lang="fr">Des outils au service des décisions</span><span lang="en">Tools that serve decisions</span></h2>
+      </div>
+      <div class="skills">
+        <div class="skill">
+          <p class="label"><span lang="fr">Analyse &amp; BI</span><span lang="en">Analytics &amp; BI</span></p>
+          <ul>
+            <li>Power BI <small>· DAX, Power Query</small></li>
+            <li><span lang="fr">Modélisation de données</span><span lang="en">Data modelling</span> <small><span lang="fr">· étoile, flocon</span><span lang="en">· star, snowflake</span></small></li>
+            <li><span lang="fr">Définition et suivi de KPI</span><span lang="en">KPI design and tracking</span></li>
+            <li>Excel</li>
+          </ul>
+        </div>
+        <div class="skill">
+          <p class="label"><span lang="fr">Données &amp; code</span><span lang="en">Data &amp; code</span></p>
+          <ul>
+            <li>SQL</li>
+            <li>Python <small>· NumPy, Flask</small></li>
+            <li>Matlab</li>
+            <li>C</li>
+          </ul>
+        </div>
+        <div class="skill">
+          <p class="label"><span lang="fr">ERP &amp; supply chain</span><span lang="en">ERP &amp; supply chain</span></p>
+          <ul>
+            <li>SAP SD <small><span lang="fr">· Ventes et distribution</span><span lang="en">· Sales &amp; Distribution</span></small></li>
+            <li><span lang="fr">Planification des rotations</span><span lang="en">Trip planning</span></li>
+            <li><span lang="fr">Suivi des expéditions</span><span lang="en">Shipment tracking</span></li>
+          </ul>
+        </div>
+        <div class="skill">
+          <p class="label"><span lang="fr">Optimisation &amp; RO</span><span lang="en">Optimisation &amp; OR</span></p>
+          <ul>
+            <li><span lang="fr">Métaheuristiques</span><span lang="en">Metaheuristics</span> <small><span lang="fr">· algorithmes génétiques</span><span lang="en">· genetic algorithms</span></small></li>
+            <li>Branch and Bound</li>
+            <li><span lang="fr">Optimisation non linéaire et multi-objectif</span><span lang="en">Nonlinear and multi-objective optimisation</span></li>
+            <li><span lang="fr">Simulation</span><span lang="en">Simulation</span> <small>· GPSS</small></li>
+          </ul>
+        </div>
+        <div class="skill">
+          <p class="label"><span lang="fr">Outils</span><span lang="en">Tools</span></p>
+          <ul>
+            <li>Microsoft 365 <small>· Word, PowerPoint, Outlook, Teams</small></li>
+            <li>Microsoft Project</li>
+            <li>LaTeX</li>
+          </ul>
+        </div>
+        <div class="skill">
+          <p class="label"><span lang="fr">Langues</span><span lang="en">Languages</span></p>
+          <ul>
+            <li><span lang="fr">Arabe</span><span lang="en">Arabic</span> <small><span lang="fr">· langue maternelle</span><span lang="en">· native</span></small></li>
+            <li><span lang="fr">Français</span><span lang="en">French</span> <small><span lang="fr">· avancé</span><span lang="en">· advanced</span></small></li>
+            <li><span lang="fr">Anglais</span><span lang="en">English</span> <small><span lang="fr">· intermédiaire avancé</span><span lang="en">· upper intermediate</span></small></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cert">
+        <div class="cert-text">
+          <span class="label">Certification · DataCamp</span>
+          <b>Power BI Data Analyst</b>
+          <span><span lang="fr">Parcours complet (Career Track)</span><span lang="en">Full career track</span></span>
+        </div>
+        <a class="btn" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/94a96fdb54be112d615e4250a65c0c7fca0d5e29" target="_blank" rel="noopener"><span lang="fr">Voir le certificat</span><span lang="en">View certificate</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-pitch">
+        <p class="label">Contact</p>
+        <h2><span lang="fr">Un poste d’analyste à pourvoir&nbsp;?</span><span lang="en">Hiring an analyst?</span></h2>
+        <p lang="fr">Je cherche un poste de Business Analyst, Data Analyst ou analyste supply chain. Le plus simple pour me joindre est l’e-mail.</p>
+        <p lang="en">I am looking for a Business Analyst, Data Analyst or supply chain analyst role. Email is the easiest way to reach me.</p>
+        <div class="cta">
+          <a class="btn primary" href="cv/CV_Sif_Eddine_Benabida_FR.pdf" target="_blank" rel="noopener"><span lang="fr">CV en français</span><span lang="en">Resume in French</span></a>
+          <a class="btn" href="cv/CV_Sif_Eddine_Benabida_EN.pdf" target="_blank" rel="noopener"><span lang="fr">CV en anglais</span><span lang="en">Resume in English</span></a>
+        </div>
+      </div>
+      <dl class="channels">
+        <div><dt class="label">E-mail</dt><dd id="email">benabidasifou@gmail.com</dd>
+          <button class="copy" type="button" id="copy-email" data-copy="benabidasifou@gmail.com"><span lang="fr">Copier</span><span lang="en">Copy</span></button></div>
+        <div><dt class="label"><span lang="fr">Téléphone</span><span lang="en">Phone</span></dt><dd>+213 549 89 81 24</dd>
+          <button class="copy" type="button" id="copy-phone" data-copy="+213549898124"><span lang="fr">Copier</span><span lang="en">Copy</span></button></div>
+        <div><dt class="label">GitHub</dt><dd class="plain"><a href="https://github.com/Sifou-213" target="_blank" rel="noopener">github.com/Sifou-213</a></dd><span></span></div>
+        <div><dt class="label"><span lang="fr">Localisation</span><span lang="en">Location</span></dt><dd class="plain"><span lang="fr">Bordj Bou Arréridj, Algérie</span><span lang="en">Bordj Bou Arréridj, Algeria</span></dd><span></span></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 Sif Eddine Benabida</span>
+    <span lang="fr">Captures issues de mes rapports Power BI publiés sur GitHub.</span>
+    <span lang="en">Screenshots from my Power BI reports published on GitHub.</span>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Image">
+  <div class="lb-bar">
+    <span class="label" id="lb-caption"></span>
+    <button class="copy" type="button" id="lb-close"><span lang="fr">Fermer</span><span lang="en">Close</span></button>
+  </div>
+  <img id="lb-img" alt="">
+</dialog>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  /* ---------- language ---------- */
+  function setLang(l) {
+    root.dataset.lang = l;
+    root.lang = l;
+    try { localStorage.setItem('seb-lang', l); } catch (e) {}
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.setLang === l));
+    });
+    var key = l === 'en' ? 'En' : 'Fr';
+    document.querySelectorAll('[data-alt-fr]').forEach(function (el) {
+      if (el.tagName === 'IMG') el.alt = el.dataset['alt' + key];
+    });
+    document.querySelectorAll('[data-label-fr]').forEach(function (el) {
+      el.setAttribute('aria-label', el.dataset['label' + key]);
+    });
+    document.title = 'Sif Eddine Benabida';
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.dataset.setLang); });
+  });
+  setLang(root.dataset.lang === 'en' ? 'en' : 'fr');
+
+  /* ---------- galleries ---------- */
+  document.querySelectorAll('[data-gallery]').forEach(function (g) {
+    var mainImg = g.querySelector('.g-main img');
+    g.querySelectorAll('.g-thumb').forEach(function (t) {
+      t.addEventListener('click', function () {
+        g.querySelectorAll('.g-thumb').forEach(function (o) { o.setAttribute('aria-pressed', String(o === t)); });
+        mainImg.src = t.dataset.src;
+        mainImg.width = +t.dataset.w; mainImg.height = +t.dataset.h;
+        mainImg.dataset.altFr = t.dataset.altFr; mainImg.dataset.altEn = t.dataset.altEn;
+        mainImg.alt = root.dataset.lang === 'en' ? t.dataset.altEn : t.dataset.altFr;
+      });
+    });
+  });
+
+  /* ---------- lightbox ---------- */
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-caption');
+  document.querySelectorAll('.g-main').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var img = btn.querySelector('img');
+      lbImg.src = img.src; lbImg.alt = img.alt; lbCap.textContent = img.alt;
+      if (lb.showModal) lb.showModal(); else window.open(img.src, '_blank');
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', function () { lb.close(); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+
+  /* ---------- copy buttons ---------- */
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var label = btn.innerHTML;
+      function done(ok) {
+        btn.innerHTML = ok ? '<span lang="fr">Copié</span><span lang="en">Copied</span>' : '<span lang="fr">Sélectionné</span><span lang="en">Selected</span>';
+        setTimeout(function () { btn.innerHTML = label; }, 1600);
+      }
+      function select() {
+        var dd = btn.previousElementSibling;
+        var r = document.createRange(); r.selectNodeContents(dd);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        done(false);
+      }
+      try {
+        navigator.clipboard.writeText(btn.dataset.copy).then(function () { done(true); }, select);
+      } catch (e) { select(); }
+    });
+  });
+
+  /* ---------- isometric load plan ---------- */
+  var C30 = Math.cos(Math.PI / 6), S30 = 0.5;
+
+  function rng(seed) {
+    return function () { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296; };
+  }
+
+  // Layer-building heuristic, simplified: each layer is a slice along the truck depth,
+  // its face split guillotine-style into boxes; a layer is as deep as its deepest box.
+  function buildPlan(D, W, H, fillDepth, seed) {
+    var r = rng(seed), boxes = [], x = 0, minW = W / 3.2, minH = H / 3.4;
+    while (x < fillDepth - 0.25) {
+      var depth = Math.min(0.55 + r() * 0.55, fillDepth - x);
+      var rects = [];
+      (function split(y, z, w, h, lvl) {
+        var cw = w > 2 * minW, ch = h > 2 * minH;
+        if ((!cw && !ch) || (lvl > 1 && r() < 0.22)) { rects.push([y, z, w, h]); return; }
+        var axis = cw && ch ? (r() < 0.5 ? 'w' : 'h') : (cw ? 'w' : 'h');
+        var f = 0.38 + r() * 0.24;
+        if (axis === 'w') { split(y, z, w * f, h, lvl + 1); split(y + w * f, z, w * (1 - f), h, lvl + 1); }
+        else { split(y, z, w, h * f, lvl + 1); split(y, z + h * f, w, h * (1 - f), lvl + 1); }
+      })(0, 0, W, H, 0);
+      rects.sort(function (a, b) { return a[1] - b[1] || a[0] - b[0]; });
+      rects.forEach(function (q) {
+        var d = depth * (0.8 + r() * 0.2);
+        boxes.push({ x0: x, y0: q[0], z0: q[1], x1: x + d, y1: q[0] + q[2], z1: q[1] + q[3], crate: r() < 0.16 });
+      });
+      x += depth;
+    }
+    return boxes;
+  }
+
+  // Painter's order for the iso view (+x, +y, +z faces visible): A is drawn first when it is behind B
+  // along an axis that separates them, and only if their screen hexagons overlap.
+  function paintOrder(boxes) {
+    var n = boxes.length, after = boxes.map(function () { return []; }), indeg = new Array(n).fill(0), e = 1e-6;
+    function rng3(b) {
+      return [b.x0 - b.y1, b.x1 - b.y0, b.y0 - b.z1, b.y1 - b.z0, b.x0 - b.z1, b.x1 - b.z0];
+    }
+    var R = boxes.map(rng3);
+    for (var i = 0; i < n; i++) for (var j = i + 1; j < n; j++) {
+      var a = R[i], b = R[j];
+      if (a[1] <= b[0] + e || b[1] <= a[0] + e || a[3] <= b[2] + e || b[3] <= a[2] + e || a[5] <= b[4] + e || b[5] <= a[4] + e) continue;
+      var A = boxes[i], B = boxes[j], first = -1;
+      if (A.x1 <= B.x0 + e || A.y1 <= B.y0 + e || A.z1 <= B.z0 + e) first = i;
+      else if (B.x1 <= A.x0 + e || B.y1 <= A.y0 + e || B.z1 <= A.z0 + e) first = j;
+      if (first < 0) continue;
+      var second = first === i ? j : i;
+      after[first].push(second); indeg[second]++;
+    }
+    var queue = [], out = [];
+    for (var k = 0; k < n; k++) if (!indeg[k]) queue.push(k);
+    while (queue.length) {
+      queue.sort(function (p, q) { return p - q; });
+      var v = queue.shift(); out.push(v);
+      after[v].forEach(function (w) { if (!--indeg[w]) queue.push(w); });
+    }
+    if (out.length < n) return boxes.map(function (_, idx) { return idx; });
+    return out;
+  }
+
+  function colors() {
+    var cs = getComputedStyle(root), g = function (v) { return cs.getPropertyValue(v).trim(); };
+    return {
+      floor: g('--floor'), steel: g('--steel'), edge: g('--edge'), tape: g('--tape'), surface: g('--surface'),
+      box: [g('--box-top'), g('--box-left'), g('--box-right')],
+      crate: [g('--crate-top'), g('--crate-left'), g('--crate-right')]
+    };
+  }
+
+  function LoadPlan(canvas, truck, opts) {
+    var self = this;
+    this.canvas = canvas; this.truck = truck; this.opts = opts;
+    this.boxes = buildPlan(truck.D, truck.W, truck.H, truck.fill, opts.seed);
+    this.order = paintOrder(this.boxes);
+    this.rank = []; this.order.forEach(function (bi, k) { self.rank[bi] = k; });
+    // loading sequence: back of the truck first, bottom first
+    this.seq = this.boxes.map(function (_, i) { return i; });
+    this.start = 0; this.progress = opts.animate ? 0 : 1;
+    this.resize();
+    if ('ResizeObserver' in window) new ResizeObserver(function () { self.resize(); self.draw(); }).observe(canvas);
+  }
+  LoadPlan.prototype.resize = function () {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2), w = this.canvas.clientWidth || 600;
+    var h = this.canvas.clientHeight || w / 1.24;
+    this.canvas.width = Math.round(w * dpr); this.canvas.height = Math.round(h * dpr);
+    this.dpr = dpr; this.w = w; this.h = h;
+    var t = this.truck, pad = 22;
+    var spanX = (t.D + t.W) * C30, spanY = (t.D + t.W) * S30 + t.H;
+    this.s = Math.min((w - 2 * pad) / spanX, (h - 2 * pad) / spanY);
+    this.ox = pad + t.W * C30 * this.s + ((w - 2 * pad) - spanX * this.s) / 2;
+    this.oy = pad + t.H * this.s + ((h - 2 * pad) - spanY * this.s) / 2;
+  };
+  LoadPlan.prototype.p = function (x, y, z) {
+    return [this.ox + (x - y) * C30 * this.s, this.oy + (x + y) * S30 * this.s - z * this.s];
+  };
+  LoadPlan.prototype.poly = function (ctx, pts, fill, stroke) {
+    ctx.beginPath();
+    pts.forEach(function (q, i) { i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1]); });
+    ctx.closePath();
+    if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+    if (stroke) { ctx.strokeStyle = stroke; ctx.stroke(); }
+  };
+  LoadPlan.prototype.draw = function () {
+    var ctx = this.canvas.getContext('2d'), t = this.truck, self = this, col = colors();
+    var P = function (x, y, z) { return self.p(x, y, z); };
+    ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    ctx.clearRect(0, 0, this.w, this.h);
+    ctx.lineJoin = 'round';
+
+    // floor with a 0.5 m grid, back wall and far side wall
+    this.poly(ctx, [P(0, 0, 0), P(t.D, 0, 0), P(t.D, t.W, 0), P(0, t.W, 0)], col.floor, null);
+    ctx.lineWidth = 1; ctx.strokeStyle = col.steel; ctx.globalAlpha = 0.35;
+    for (var gx = 0.5; gx < t.D; gx += 0.5) { var a = P(gx, 0, 0), b = P(gx, t.W, 0); ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); }
+    for (var gy = 0.5; gy < t.W; gy += 0.5) { var c = P(0, gy, 0), d = P(t.D, gy, 0); ctx.beginPath(); ctx.moveTo(c[0], c[1]); ctx.lineTo(d[0], d[1]); ctx.stroke(); }
+    ctx.globalAlpha = 0.5;
+    this.poly(ctx, [P(0, 0, 0), P(t.D, 0, 0), P(t.D, 0, t.H), P(0, 0, t.H)], col.floor, null);
+    this.poly(ctx, [P(0, 0, 0), P(0, t.W, 0), P(0, t.W, t.H), P(0, 0, t.H)], col.floor, null);
+    ctx.globalAlpha = 1;
+    ctx.lineWidth = 1.2; ctx.strokeStyle = col.steel;
+    [[[0, 0, 0], [t.D, 0, 0]], [[0, 0, 0], [0, t.W, 0]], [[0, 0, 0], [0, 0, t.H]], [[0, 0, t.H], [t.D, 0, t.H]], [[0, 0, t.H], [0, t.W, t.H]], [[t.D, 0, 0], [t.D, 0, t.H]], [[0, t.W, 0], [0, t.W, t.H]]].forEach(function (seg) {
+      var u = P.apply(null, seg[0]), v = P.apply(null, seg[1]);
+      ctx.beginPath(); ctx.moveTo(u[0], u[1]); ctx.lineTo(v[0], v[1]); ctx.stroke();
+    });
+
+    // boxes
+    // the first ~40% of the load is already in place so the opening frame is never empty
+    var n = this.boxes.length, k0 = Math.round(n * 0.4), shown = k0 + this.progress * (n + 4 - k0), placed = 0, vol = 0;
+    var g = 0.02;
+    this.order.forEach(function (bi) {
+      var k = bi, local = Math.max(0, Math.min(1, shown - k));
+      if (local <= 0) return;
+      var b = self.boxes[bi], ease = 1 - Math.pow(1 - local, 3), lift = (1 - ease) * 0.9;
+      if (local >= 1) { placed++; vol += (b.x1 - b.x0) * (b.y1 - b.y0) * (b.z1 - b.z0); }
+      var x0 = b.x0 + g, x1 = b.x1 - g, y0 = b.y0 + g, y1 = b.y1 - g, z0 = b.z0 + g + lift, z1 = b.z1 - g + lift;
+      var pal = b.crate ? col.crate : col.box;
+      ctx.globalAlpha = Math.min(1, local * 1.6);
+      ctx.lineWidth = 1;
+      self.poly(ctx, [P(x0, y1, z0), P(x1, y1, z0), P(x1, y1, z1), P(x0, y1, z1)], pal[1], col.edge);
+      self.poly(ctx, [P(x1, y0, z0), P(x1, y1, z0), P(x1, y1, z1), P(x1, y0, z1)], pal[2], col.edge);
+      self.poly(ctx, [P(x0, y0, z1), P(x1, y0, z1), P(x1, y1, z1), P(x0, y1, z1)], pal[0], col.edge);
+      if (!b.crate) {
+        var ym = (y0 + y1) / 2, tw = Math.min(0.09, (y1 - y0) / 6);
+        self.poly(ctx, [P(x0, ym - tw, z1), P(x1, ym - tw, z1), P(x1, ym + tw, z1), P(x0, ym + tw, z1)], col.tape, null);
+        self.poly(ctx, [P(x1, ym - tw, z1), P(x1, ym + tw, z1), P(x1, ym + tw, z1 - 0.18), P(x1, ym - tw, z1 - 0.18)], col.tape, null);
+      } else {
+        ctx.strokeStyle = col.edge; ctx.lineWidth = 1;
+        for (var f = 1; f < 3; f++) {
+          var zz = z0 + (z1 - z0) * f / 3, u = P(x1, y0, zz), v = P(x1, y1, zz);
+          ctx.beginPath(); ctx.moveTo(u[0], u[1]); ctx.lineTo(v[0], v[1]); ctx.stroke();
+        }
+      }
+    });
+    ctx.globalAlpha = 1;
+
+    // near container edges, drawn over the load
+    ctx.lineWidth = 1.2; ctx.strokeStyle = col.steel; ctx.setLineDash([4, 4]);
+    [[[t.D, t.W, 0], [t.D, 0, 0]], [[t.D, t.W, 0], [0, t.W, 0]], [[t.D, t.W, 0], [t.D, t.W, t.H]], [[t.D, t.W, t.H], [t.D, 0, t.H]], [[t.D, t.W, t.H], [0, t.W, t.H]]].forEach(function (seg) {
+      var u = P.apply(null, seg[0]), v = P.apply(null, seg[1]);
+      ctx.beginPath(); ctx.moveTo(u[0], u[1]); ctx.lineTo(v[0], v[1]); ctx.stroke();
+    });
+    ctx.setLineDash([]);
+
+    if (this.opts.onStats) this.opts.onStats(placed, n, vol / (t.D * t.W * t.H));
+  };
+  LoadPlan.prototype.play = function () {
+    var self = this, dur = this.boxes.length * 0.6 * 80 + 400;
+    this.start = performance.now(); this.progress = 0;
+    cancelAnimationFrame(this.raf);
+    (function tick(now) {
+      self.progress = Math.min(1, (now - self.start) / dur);
+      self.draw();
+      if (self.progress < 1) self.raf = requestAnimationFrame(tick);
+    })(this.start);
+  };
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var countEl = document.getElementById('lp-count'), volEl = document.getElementById('lp-vol');
+  var hero = new LoadPlan(document.getElementById('hero-canvas'), { D: 8.0, W: 2.5, H: 2.6, fill: 6.4 }, {
+    seed: 21, animate: !reduce,
+    onStats: function (placed, total, v) {
+      countEl.textContent = placed + '/' + total;
+      volEl.textContent = Math.round(v * 100) + ' %';
+    }
+  });
+  var pfe = new LoadPlan(document.getElementById('pfe-canvas'), { D: 4.5, W: 2.0, H: 2.0, fill: 4.5 }, { seed: 7, animate: false });
+  if (reduce) hero.draw(); else hero.play();
+  pfe.draw();
+  document.getElementById('lp-replay').addEventListener('click', function () { reduce ? hero.draw() : hero.play(); });
+
+  function redrawAll() { hero.draw(); pfe.draw(); }
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', redrawAll);
+  }
+  new MutationObserver(redrawAll).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
+</body>
+</html>
