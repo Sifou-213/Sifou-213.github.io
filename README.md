@@ -1,6 +1,6 @@
 # Sif Eddine Benabida · Portfolio
 
-Business Analyst, supply chain & data. Live site: https://sifou-213.github.io
+Business Analyst · Planning & scheduling (production, procurement) · Supply chain & data. Live site: https://sifou-213.github.io
 
 - `index.html`: the whole site (French and English, switch with the FR / EN button or open `#en`)
 - `assets/img/`: dashboard screenshots, photo and link-preview image
